@@ -15,8 +15,10 @@ public class ShoppingCart {
        
         //Array list for the cart
         ArrayList<String> cart = new ArrayList<>();
+        
+        boolean programIsRunning = true;
 
-        while (true) {
+        while (programIsRunning) {
             String input = cons.readLine(">");
             String[] cmdItm = input.split(" ", 2); // this splits the input into command and item
 
@@ -71,8 +73,9 @@ public class ShoppingCart {
                 break;
 
                 case "exit":
-                System.out.println("Exiting the shopping cart now! Thank you and see you again!\n");
-                System.exit(0);
+                programIsRunning = false;
+                System.out.println("Exiting the shopping cart now!");
+                
                 break;
                 
                 default:
