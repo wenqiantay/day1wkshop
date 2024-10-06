@@ -60,9 +60,6 @@ public class ShoppingCart {
                 
                 //Delete - delete the items from the lists from the list command. If incorrect index, provided then print error message
                 case "delete":
-                if (item.isEmpty() || !isNumeric(item)){
-                    System.out.println("Please enter a valid numeric index to delete.");
-                } else {
                     int index = Integer.parseInt(item) - 1 ;
                     if(index >= 0 && index < cart.size()){
                      String removedItem = cart.remove(index);
@@ -70,7 +67,7 @@ public class ShoppingCart {
                     } else {
                     System.out.println("Incorrect item index.\n");
                     }
-                }
+                
                 break;
 
                 case "exit":
@@ -85,8 +82,5 @@ public class ShoppingCart {
 
 
         }
-        //Method to check if the string is a number
-        private static boolean isNumeric(String str) {
-            return str.matches("\\d+"); // Check if the string contains only digits
-        }
+    
 }
